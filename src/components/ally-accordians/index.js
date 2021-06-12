@@ -47,7 +47,7 @@ const Accordions = ({data}) => {
 
    const results = [];
   for (const key in category) {
-    results.push({ label: key,value: category[key]})
+    results.push({ label: key,value: key})
   }
   return results;
  }
@@ -55,7 +55,7 @@ const Accordions = ({data}) => {
  const handleSelectChange = (value) => {
       setValue(value);
       setTimeout(() => {
-        const data = accordionsData.filter(dt => value.indexOf(dt.id) !== -1);
+        const data = accordionsData.filter(dt => value.indexOf(dt.category) !== -1);
         if(value.length === 0) {
           setMapData(accordionsData);
         } else {
